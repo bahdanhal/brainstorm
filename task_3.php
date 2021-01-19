@@ -4,15 +4,14 @@ function no(){
     echo 'no';
     exit();
 }
-
+$digitsCount = 0;
 $N = $argv[1];
 $digits = array();
 while($N >= 1){
     $digit = $N % 10;
     $N /= 10;
-    array_push($digits, $digit);
+    $digits[$digitsCount++] = $digit;
 }
-$digitsCount = count($digits);
 if ($digitsCount > 10 or $digitsCount < 2){
     no();
 }
