@@ -22,24 +22,9 @@ $friends = array();
 $friendsCount = 0;
 for($firstNumber = $N; $firstNumber <= $M; $firstNumber++){
     $firstSum = sum($firstNumber);
-    for($secondNumber = $N; $secondNumber <= $M; $secondNumber++){
-        if($secondNumber == $firstNumber){
-            break;
-        }
+    for($secondNumber = $firstNumber + 1; $secondNumber <= $M; $secondNumber++){
 
         if(sum($secondNumber) == $firstNumber and $firstSum == $secondNumber){
-            $repeat = false;
-            for($currentFriendsCount = 0; $currentFriendsCount < $friendsCount; $currentFriendsCount++){
-                if(($secondNumber == $friends[$currentFriendsCount][0] and $firstNumber == $friends[$currentFriendsCount][1]) or 
-                ($secondNumber == $friends[$currentFriendsCount][1] and $firstNumber == $friends[$currentFriendsCount][0])){
-                    $repeat = true;
-                    break;
-                }
-            }
-            if($repeat){
-                break;
-            }
-            $friends[$friendsCount++] = [$firstNumber, $secondNumber];
             echo $firstNumber. ' and '. $secondNumber. PHP_EOL;
         }
     }
