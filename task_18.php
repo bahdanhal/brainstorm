@@ -30,8 +30,8 @@ for($firstNumber = $N; $firstNumber <= $M; $firstNumber++){
         if(sum($secondNumber) == $firstNumber and $firstSum == $secondNumber){
             $repeat = false;
             for($currentFriendsCount = 0; $currentFriendsCount < $friendsCount; $currentFriendsCount++){
-                if(($secondNumber == $friends[$CurrentFriendsCount][0] and $firstNumber == $friends[$CurrentFriendsCount][1]) or 
-                ($secondNumber == $friends[$CurrentFriendsCount][1] and $firstNumber == $friends[$CurrentFriendsCount][0])){
+                if(($secondNumber == $friends[$currentFriendsCount][0] and $firstNumber == $friends[$currentFriendsCount][1]) or 
+                ($secondNumber == $friends[$currentFriendsCount][1] and $firstNumber == $friends[$currentFriendsCount][0])){
                     $repeat = true;
                     break;
                 }
