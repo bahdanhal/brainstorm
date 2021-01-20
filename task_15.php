@@ -13,4 +13,4 @@ if($N % sqrt($N) == 0 and $count == sqrt($N)){
     $divisors++;
 }
 
-echo ++$divisors;
+echo $divisors + 2;
