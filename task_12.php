@@ -4,7 +4,6 @@ $N = $argv[1];
 
 for($count = 2; $count <= sqrt($N); $count++){
     if($N % $count == 0){
-	echo ' '. $count. ' ';
         echo 'No';
         exit();
     }
