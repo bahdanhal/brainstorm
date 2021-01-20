@@ -12,7 +12,6 @@ for($number = 1; $number <= $M; $number++){
         $sum += $digit;
     }
 
-    //echo '/'.$number.'/';
     if($element % $sum == 0){
         echo $element. '   ';;
     }
