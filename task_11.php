@@ -1,4 +1,3 @@
-
 <?php 
 $N = $argv[1];  //multiplicator
 $M = $argv[2];  //max
