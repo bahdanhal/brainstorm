@@ -15,6 +15,7 @@ for($current = $N; $current <= $M; $current++){
     if($current % sqrt($current) == 0 and $count == sqrt($current)){
         $sum += sqrt($current);
     }
+    echo $sum.'_';
     if($current == $sum){
         echo $current. ' ';
     }
