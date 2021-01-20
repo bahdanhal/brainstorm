@@ -1,6 +1,6 @@
 <?php 
-$N = $argv[1];  //min
-$M = $argv[2];  //max
+$N = $argv[1];  //first number
+$M = $argv[2];  //second number
 if($N > $M){
     $max = $N;
     $min = $M;
