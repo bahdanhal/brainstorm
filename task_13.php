@@ -8,7 +8,6 @@ while ($number > 1){
     $reversed = $reversed * 10 + ($number % 10);
     $number /= 10;
     $count++;
-    echo $reversed. ' ';
 }
 
 if(!($count % 2) and $argv[1] == $reversed){
