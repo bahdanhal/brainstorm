@@ -6,12 +6,17 @@ function no(){
 }
 $digitsCount = 0;
 $N = $argv[1];
-$digits = array();
+$digit = $N % 10;
+$N /= 10;
 while($N >= 1){
-    $digit = $N % 10;
+    $currentDigit = $N % 10;
     $N /= 10;
-    $digits[$digitsCount++] = $digit;
+    if($digit < $currentDigit){
+        exit('no');
+    }
+    $digit = $currentDigit;
 }
+/*
 if ($digitsCount > 10 or $digitsCount < 2){
     no();
 }
@@ -27,5 +32,5 @@ for ($count = $digitsCount - 2; $count > 0; $count--){
         no();
     }
     
-}
+}*/
 echo 'yes';
