@@ -1,7 +1,6 @@
 <?php
 
 $number = $argv[1];
-$increase = 0;
 $count = 1;
 
 $current = $number;

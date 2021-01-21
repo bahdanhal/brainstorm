@@ -1,45 +1,52 @@
 <?php
-
-$number = $argv[1];
-$increase = 0;
-while ($number >= 1){
-    $current = $number;
-    $min = $current % 10;
-    while($current >= 1){    //min finding
-        $digit = $current % 10;
-      
-        if($digit < $min){
-            $min = $digit;
-        }
-        $current /= 10;
-    }
-
-    if(!$increase){     //result number
-        $increase = $min;
-    } else {
-        $increase *= 10;
-        $increase += $min;
-    }
-    
+function number_sort($number)
+{
+    $count = 1;
 
     $current = $number;
-    $rank = 1;
-    while ($current){   //rank of min finding
-        $digit = $current % 10;
-        if($digit == $min){
-            break;
-        }
+    while($current >= 1){
         $current /= 10;
-        $rank++;
+        $count++;
     }
+    while ($number >= 1 and $count > 1){
+        
+        $current = $number;
+        $min = $current % 10;
+        $currentRank = 1;
+        $rank = 1;
+        for($currentDigits = 0; $currentDigits < $count - 1; $currentDigits++){
+            
+            $digit = $current % 10;
+            
+            if($digit > $min){
+                $min = $digit;
+                $rank = $currentRank;
+            }
+            $currentRank++;
+            $current /= 10;
 
-    $leftDivider = 10 ** $rank;
-    $rightDivider = 10 ** ($rank - 1);
-    $leftSide = (int) ($number / $leftDivider);
-    $rightSide = $number % $rightDivider;
-    //echo $number. '  '. $leftSide. ' '. $rightSide. ' '. $min;
-    $number = $leftSide * $rightDivider + $rightSide;
-    //echo PHP_EOL;
+        }
+        //delete
+        $leftDivider = 10 ** $rank;
+        $rightDivider = 10 ** ($rank - 1);
+        $leftSide = (int) ($number / $leftDivider);
+        $rightSide = $number % $rightDivider;
+        $number = $leftSide * $rightDivider + $rightSide;
+
+        //add
+        $leftDivider = 10 ** ($count - 2);
+        $rightDivider = 10 ** ($count - 2);
+        $leftSide = (int) ($number / $leftDivider);
+        $rightSide = $number % $rightDivider;
+
+        $number = $leftSide * $rightDivider * 10 + $min * (10 ** ($count - 2)) + $rightSide;
+
+        $count--;
+    }
+    return $number;
 }
 
-echo $increase;
+//$number = $argv[1];
+for($count = 1; $count < $argc; $count++){
+    echo number_sort($argv[$count]).PHP_EOL;
+}
