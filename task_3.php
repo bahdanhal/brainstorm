@@ -16,21 +16,5 @@ while($N >= 1){
     }
     $digit = $currentDigit;
 }
-/*
-if ($digitsCount > 10 or $digitsCount < 2){
-    no();
-}
 
-$difference = $digits[$digitsCount - 1] - $digits[$digitsCount - 2];
-if ($difference > 0){
-    no();
-}
-
-for ($count = $digitsCount - 2; $count > 0; $count--){
-    $currentDifference = $digits[$count] - $digits[$count - 1];
-    if($currentDifference != $difference){
-        no();
-    }
-    
-}*/
 echo 'yes';
