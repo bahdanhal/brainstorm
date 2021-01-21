@@ -12,16 +12,15 @@ function is_prime($number)
 
 $number = $argv[1];
 
-//while($number){
-    $count = 2; 
-    for($count; $count <= sqrt($number); $count++){
-        if(is_prime($count)){
-            if($number % $count == 0){
-                echo $count. ' ';
-                $number /= $count;
-                $count--;
-            }
+
+$count = 2; 
+for($count; $count <= sqrt($number); $count++){
+    if(is_prime($count)){
+        if($number % $count == 0){
+            echo $count. ' ';
+            $number /= $count;
+            $count--;
         }
     }
-    echo $number;
-//}
+}
+echo $number;
