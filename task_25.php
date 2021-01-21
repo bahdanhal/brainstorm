@@ -18,7 +18,6 @@ for($count = 0; $count <= $M; $count++){
         $current /= 10;
     }
     if($factSum == $number){
-        echo $number.PHP_EOL;
         $amount++;
         $sum += $factSum;
     }
