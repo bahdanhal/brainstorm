@@ -46,7 +46,6 @@ function number_sort($number)
     return $number;
 }
 
-//$number = $argv[1];
 for($count = 1; $count < $argc; $count++){
     echo number_sort($argv[$count]).PHP_EOL;
 }
