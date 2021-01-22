@@ -1,15 +1,11 @@
 
 <?php 
-
-$digitsCount = 0;
 $N = $argv[1];
-$digits = array();
-
+$number = 0;
 while($N >= 1){
     $digit = $N % 10;
     $N /= 10;
-    $digits[$digitsCount++] = $digit;
+    $number *= 10;
+    $number += $digit;
 }
-for ($count = 0; $count < $digitsCount; $count++){
-    echo $digits[$count];    
-}
+echo $number;
