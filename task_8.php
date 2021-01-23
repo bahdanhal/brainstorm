@@ -7,16 +7,15 @@ for($N = 1000; $N < 9999; $N++){
     while($number >= 1){
         $digit = $number % 10;
         $number /= 10;
-        for($current = 0; $current < $digitsCount; $current++){
-            if($uniqueDigits[$current] == $digit){
+        $nextDigits = $number;
+        while($nextDigits >= 1){
+            $currentDigit = $nextDigits % 10;
+            if($digit == $currentDigit){
                 $unique = false;
                 break;
             }
+            $nextDigits /= 10;
         }
-        if(!$unique){
-            break;
-        }
-        $uniqueDigits[$digitsCount++] = $digit;
     }
     if($unique){
         echo $N.' ';
