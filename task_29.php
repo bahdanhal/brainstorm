@@ -1,4 +1,8 @@
 <?php
+if($argc < 3){
+    exit('1st command line element - sum; 2nd, 3rd... - numbers');
+}
+
 function delete_numbers_ability($number, $sum) 
 {
     if ($sum == 0) {
@@ -16,8 +20,13 @@ function delete_numbers_ability($number, $sum)
 
 
 }
-if(delete_numbers_ability($argv[1], $argv[2])){
-    echo 'yes';
-} else {
-    echo 'no';
+$sum = $argv[1];
+for($count = 2; $count < $argc; $count++){
+    echo $argv[$count].': ';
+    if(delete_numbers_ability($argv[$count], $argv[$sum])){
+        echo 'yes';
+    } else {
+        echo 'no';
+    }
+    echo PHP_EOL;
 }

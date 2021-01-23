@@ -17,12 +17,10 @@ function sum($current)
     return $sum;
 }
 
-$N = $argv[1];  //multipler
-$M = $argv[2];  //maximum
-$max = $N;
-$maxSum = sum($N);
-for($count = 2; $count < $M; $count++){
-    $number = $count * $N;
+$max = $argv[1];
+$maxSum = sum($max);
+for($count = 2; $count < $argc; $count++){
+    $number = $argv[$count];
     $currentSum = sum($number);
     if($currentSum > $maxSum){
         $max = $number;
