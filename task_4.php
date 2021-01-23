@@ -36,13 +36,6 @@ for($number = 1000; $number <10000; $number+=2){
 
     }
 
-//    $decrease = true;
-//    for ($count = $digitsCount - 1; $count > 0; $count--){
-//        if($digits[$count] < $digits[$count - 1]){
-//            $decrease = false;
-//            break;
-//        }
-//    }
     if($movement){
         echo $number.' ';
     }
