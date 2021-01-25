@@ -14,7 +14,7 @@ $numbersCount = $argc - 3;
 
 for($count = 0; $count < $numbersCount; $count++){
     $N = 0;
-    while ($numbers[$count] == $value){
+    while ($count < $numbersCount - 1 and $numbers[$count] == $value){
         $N++;
         if($N == $repeats){
             exit('yes');
