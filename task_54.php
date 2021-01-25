@@ -1,6 +1,5 @@
 <?php
 
-
 if($argc < 2){
     exit;
 }
