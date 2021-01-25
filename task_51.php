@@ -45,10 +45,9 @@ $numbersCount = $argc - 1;
 qSort($numbers, 0, $numbersCount - 1);
 $unique = 0; 
 for($count = 0; $count < $numbersCount; $count++){
-    while(!($count < $numbersCount - 1 and $numbers[$count] == $numbers[$count + 1])){
+    if(!($count < $numbersCount - 1 and $numbers[$count] == $numbers[$count + 1])){
         $numbers[$unique] = $numbers[$count]; 
         $unique++;
-        $count++;
     }
     while ($count < $numbersCount - 1 and $numbers[$count] == $numbers[$count + 1]){
         $count++;
