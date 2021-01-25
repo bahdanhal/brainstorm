@@ -33,7 +33,6 @@ for($count = 0; $count < $numbersCount; $count++){
         for($k; $k > 0; $k--){
             $numbers[$count + $k] = $min;
         }
-	break;
     }
 }
 
